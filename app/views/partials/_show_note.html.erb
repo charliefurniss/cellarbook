@@ -1,0 +1,28 @@
+<% rating = @note.rating %>	
+
+<div class="row">	
+	<div class="large-12 medium-12 small-12 columns">
+		<table>
+			<tr>
+				<td class="noteCategory"><strong>Appearance</td></strong><td class="noteCopy"><%= @note.appearance %></td>
+			</tr>
+			<tr>
+				<td class="noteCategory"><strong>Nose</td></strong><td class="noteCopy"><%= @note.nose %></td>
+			</tr>
+			<tr>
+				<td class="noteCategory"><strong>Palate</td></strong><td class="noteCopy"><%= @note.palate %></td>
+			</tr>
+			<tr>
+				<td class="noteCategory"><strong>Conclusion</td></strong><td class="noteCopy"><%= @note.conclusion %></td>
+			</tr>
+			<tr>
+				<td class="noteCategory"><strong>Maturity</td></strong><td class="noteCopy"><%= @note.maturity %></td>
+			</tr>
+			<tr>
+				<td class="noteCategory"><strong>Rating</td></strong><td class="noteCopy"><% (1..rating).each do |i| %>
+						<i class="fa fa-star-o"></i>
+					<% end %>
+			</tr>			
+		</table>
+	</div>
+</div>

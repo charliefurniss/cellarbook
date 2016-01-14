@@ -1,0 +1,62 @@
+<div class="row">
+	<div class="small-12 columns">
+		<table>
+			<thead>
+			    <tr>
+			    <th width="50">Style</th>
+		      	<th width="150">Name</i> </th>
+		      	<th width="100">Region</th>
+		      	<th width="100">Country</th>
+		      	<th width="100">Drinking window</th>
+		      	<th width="50">In cellar</th>
+			    </tr>
+			</thead>
+
+			<tbody>
+			<% @wines.each do |wine| %>	
+			<% full_name = "#{wine.producer} #{wine.name} #{wine.vintage}"	%>
+			<% quantity = wine.bottles.where(:user => current_user, :drunk => false).count %>
+			<% if wine.style == "sparkling" %>
+
+				<% style_url = "/assets/champagne.jpg" %>
+
+			<% elsif wine.style == "red" %>
+
+				<% style_url = "/assets/red.jpg" %>
+				
+			<% elsif wine.style == "white" %>
+
+				<% style_url = "/assets/white.jpg" %>
+			
+			<% elsif wine.style == "rose" %>
+
+				<% style_url = "/assets/rose.jpg" %>
+
+			<% elsif wine.style == "sweet" %>
+
+				<% style_url = "/assets/sweet.jpg" %>				
+
+			<% end %>
+				<tr>
+					<td><%= image_tag(style_url, size: "50x30") %></td>
+					<td>
+						<% if controller_name == "user_wines" %>
+							
+							<%= link_to full_name, user_wine_path(wine) %>
+
+						<% elsif controller_name == "wines" %>
+
+							<%= link_to full_name, wine %>
+
+						<% end %>
+					</td>
+					<td><%= wine.region %></td>
+					<td><%= wine.country %></td>
+					<td class="window"><%= "#{wine.window_start}–#{wine.window_end}" %></td>
+					<td class="quantity"><%= quantity %></td>
+				</tr>
+			<% end %>		
+			</tbody>
+		</table>
+	</div>
+</div>	
