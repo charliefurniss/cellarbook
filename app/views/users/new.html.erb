@@ -1,3 +1,5 @@
+<!-- Sign up form. Appears with homepage background -->
+
 <div class="homepage">
     <div class="homepage-inner">
         <div class="row" id="welcome">
@@ -31,7 +33,7 @@
 							<%= f.label :password_confirmation %>
 							<%= f.password_field :password_confirmation %>
 						</div>
-						<div class="actions">
+						<div class="actions" id="submitButtonContainer">
 							<%= f.submit 'Sign up', :class => 'submitButton' %>
 						</div>
 					</div>

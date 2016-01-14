@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
-  	#checks if user logged in and redirects to another page
+  	#redirects to login page if no user is logged in
   	unless logged_in?
   		redirect_to "/sessions/new"
   	end	

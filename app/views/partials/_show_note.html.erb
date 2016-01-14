@@ -1,3 +1,5 @@
+<!-- Dsiplays single note. Rendered in user_notes/show and notes/show -->
+
 <% rating = @note.rating %>	
 
 <div class="row">	
@@ -19,6 +21,7 @@
 				<td class="noteCategory"><strong>Maturity</td></strong><td class="noteCopy"><%= @note.maturity %></td>
 			</tr>
 			<tr>
+			<!-- displays the correct number of stars using a loop between one and the appropriate rating score-->
 				<td class="noteCategory"><strong>Rating</td></strong><td class="noteCopy"><% (1..rating).each do |i| %>
 						<i class="fa fa-star-o"></i>
 					<% end %>

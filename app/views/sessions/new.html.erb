@@ -1,23 +1,33 @@
-<h1>Log in</h1>
+<!-- Log in form -->
 
-<form action="/sessions" method="post">
-	
-	<div class="field">
-		<label for = "email">email</label>
-		<input type="text" name="email"/>
+<div class="homepage">
+    <div class="homepage-inner">
+        <div class="row" id="welcome">
+            <div class="small-6 columns small-offset-3 text-center">
+            	<div class="userForm">
+					<h1>Log in</h1>
+
+					<form action="/sessions" method="post">
+						
+						<div class="field" id="signInText">
+							<label for = "email">Email</label>
+							<input type="text" name="email"/>
+						</div>
+
+						<div class="field" id="signInText">
+							<label for = "password">Password</label>
+							<input type="password" name="password"/>
+						</div>
+
+						<div class="actions" id="submitButtonContainer">
+							<input type="submit" value="Login" class="submitButton" />
+						</div>
+
+						<%= token_tag %>
+
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<div class="field">
-		<label for = "password">password</label>
-		<input type="password" name="password"/>
-	</div>
-
-	<br>
-
-	<div class="actions">
-		<input type="submit" value="login"/>
-	</div>
-
-	<%= token_tag %>
-
-</form
+</div>

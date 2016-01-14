@@ -14,6 +14,7 @@
   </head>
 
   <body>
+    <!-- Foundation sticky navigation bar -->
     <div class="row" id="topNav">
       <div class="small-10 small-offset-1 columns">
          <div class="contain-to-grid sticky">   
@@ -29,23 +30,16 @@
             <section class="top-bar-section">
               <!-- Right Nav Section -->
               <ul class="right">
-                <!-- <li class="has-form">
-                  <div class="row collapse">
-                    <div class="large-8 small-9 columns">
-                      <input type="text" placeholder="eg, wine, region, user">
-                    </div>
-                    <div class="large-4 small-3 columns">
-                      <a href="#" class="alert button expand">Search</a>
-                    </div>
-                  </div>
-                </li> -->
                 <li>
                   <a><%= link_to 'Add wine', new_wine_path %></a>
                 </li>
-
+                <!-- Changes the display depending on whether a user is logged in or not -->
                 <% if current_user %>
                   <ul class="right">
                     <li class="active"><%= link_to 'Log out' , sessions_path , method: :delete, data: {confirm: 'Are you sure?'} %></li>
+                  </ul>
+                  <ul class="right">
+                    <li><%= link_to "#{current_user.name.titleize}" , user_path(current_user) %></li>
                   </ul>
                 <% else %>           
                   <ul class="left">
@@ -70,6 +64,7 @@
   
       <div class="row" id="subNav">
         <div class="small-10 small-offset-1 columns">  
+         <!-- displays the subnav only when a user is logged in and changes its highlighting according to current controller -->
          <% if current_user %>
 
             <% if controller_name == "user_wines" %>
@@ -89,12 +84,6 @@
          <% end %>
         </div>
       </div>
-
-      <!-- <div class="row" id="title">
-        <div class="small-10 small-offset-1 columns">   
-          <h5><%= @title %></h5>
-        </div>
-      </div> -->
 
       <%= yield %>
      

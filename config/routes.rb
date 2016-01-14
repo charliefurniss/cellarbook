@@ -10,11 +10,11 @@ Rails.application.routes.draw do
 
   delete "/sessions" , to: "sessions#destroy"
 
-  resources :notes
+  resources :notes, only: [:index, :new, :show, :create]
 
-  resources :users
+  resources :users, only: [:new, :show, :create, :edit, :update]
 
-  resources :wines
+  resources :wines, only: [:index, :new, :show, :create]
 
   delete "/wines/:id" , to: "wines#destroy"
 

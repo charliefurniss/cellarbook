@@ -16,7 +16,7 @@
 
  */
 
- div.homepage {
+ .homepage {
 
      width:100%;
      height:100%;
@@ -25,7 +25,7 @@
 
  }
 
- div.homepage-inner {
+ .homepage-inner {
 
      width:100%;
      height:100%;
@@ -33,7 +33,7 @@
 
  }
 
- div.homepage div#welcome {
+ .homepage #welcome {
 
      position: relative;
      top: 50%;
@@ -42,9 +42,29 @@
 
  }
  
- div.homepage div#welcome h1 {
+ .homepage #welcome h1 {
 
      color:white !important;
+
+ }
+
+ .homepageTitle {
+
+ 	font-size: 66px;
+
+ }
+
+ .homepageCopy {
+
+ 	font-size: 33px;
+ 	color: white;
+
+ }
+
+ .formArea {
+
+ 	margin: 0 auto;
+ 	margin-top: 20px;
 
  }
 
@@ -58,7 +78,18 @@
 
 .userForm h1 {
 
-	padding-left: 20px;
+	max-width: 400px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	text-align: left;
+	font-size: 33px;
+
+}
+
+.userForm h3 {
+
+	color: white;
+	padding-left: 30px;
 
 }
 
@@ -73,6 +104,45 @@
 
 }
 
+.submitButton {
+
+	height: 50px;
+	max-width: 400px;
+	color: white;
+	background-color: blue;
+	border: none;
+	font-size: 20px;
+
+}
+
+#submitButtonContainer {
+
+	margin: 0px auto;
+	text-align: center;
+
+}
+
+
+#textInput {
+
+	text-align: left;
+	display: block;
+	margin: 0px auto !important;
+	padding: 0px;
+	margin-bottom: 20px;
+	max-width: 400px;
+
+}
+
+#note_appearance, #note_nose, #note_palate, #note_conclusion {
+
+	clear: both;
+	float: left;
+	height: 100%;
+	width: 100%;
+
+}
+
 #signInText {
 
 	text-align: left;
@@ -80,6 +150,13 @@
 	margin: 0px auto !important;
 	padding: 0px;
 	margin-bottom: 20px;
+	max-width: 400px;
+
+}
+
+label {
+
+	font-size: 20px !important;
 
 }
 
@@ -135,25 +212,6 @@
 	padding: 16px 23px;
 	text-align: center;
 	background-color: red;
-
-}
-
-#textInput {
-
-	clear: both;
-	float: left;
-	height: 100px;
-	width: 600px;
-	margin-bottom: 20px;
-
-}
-
-#note_appearance, #note_nose, #note_palate, #note_conclusion {
-
-	clear: both;
-	float: left;
-	height: 100%;
-	width: 100%;
 
 }
 
@@ -223,6 +281,7 @@ table, .wineForm {
 	position:relative;
 	padding-bottom: 10px;
 	min-height: 250px;
+	color: white;
 
 }
 

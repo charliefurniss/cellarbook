@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-	// if (!!$('#addNoteButton')) {
-		// console.log('button is here')
+// handles the add wine form appearing in user_wines/show
 
 		var form = $('#newNoteForm');
 
@@ -10,7 +9,5 @@ $(document).ready(function() {
 		button.on('click', function(){
 			form.toggle('slow');
 		})
-
-	// };
 
 });

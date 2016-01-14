@@ -1,5 +1,9 @@
+#WinesController operates the wine-related methods available to any user (ie, doesn't have to be logged in), although new wines are created here rather than in the user_wines controller
 class WinesController < ApplicationController
-  before_action :set_wine, only: [:show, :edit, :update, :destroy]
+  #calls private method to store relevant wine in @wine variable before any others. Only available to the show method
+  before_action :set_wine, only: [:show]
+  #allows only logged in users to add wines. The authenticate method is defined in the Application controller and sends users to login page if they are not logged in
+  before_action :authenticate, only: [:new]
   def index
 
     @wines = Wine.all
@@ -37,7 +41,7 @@ class WinesController < ApplicationController
     if @wine.save
 
       quantity = bottle_params[:quantity].to_i
-
+      #adds the relavent number of entries referring the new wine and the current_user in the Bottle table
       quantity.times do |i|
 
         @bottle = Bottle.create(wine: @wine , user: current_user)

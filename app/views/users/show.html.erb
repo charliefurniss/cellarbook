@@ -1,3 +1,5 @@
+<!-- Displays user details -->
+
 <div class="row" id="mainBackground">
   <div class="small-10 small-offset-1 columns">
   	<h5 class="head">User profile</h5>    
@@ -9,9 +11,6 @@
     			</tr>
     			<tr>
     				<td class="profileCategory"><strong>Email</td></strong><td class="userDetails"><%= @user.email %></td>
-    			</tr>
-    			<tr>
-    				<td class="profileCategory"><strong>Password</td></strong><td class="userDetails"><%= @user.password_digest %></td>
     			</tr>			
     		</table>
     		<%= link_to 'Edit profile' , edit_user_path %>

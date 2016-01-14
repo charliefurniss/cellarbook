@@ -1,3 +1,4 @@
+<!-- displays wines index. Rendered in both wines and user_wines views -->
 <div class="row">
 	<div class="small-12 columns">
 		<table>
@@ -13,9 +14,12 @@
 			</thead>
 
 			<tbody>
-			<% @wines.each do |wine| %>	
+			<% @wines.each do |wine| %>
+			<!-- combines different elements of wine details -->	
 			<% full_name = "#{wine.producer} #{wine.name} #{wine.vintage}"	%>
+			<!-- establishes and sets the quantity of each wine -->
 			<% quantity = wine.bottles.where(:user => current_user, :drunk => false).count %>
+			<!-- displays different bottle image depending on the style of wine -->
 			<% if wine.style == "sparkling" %>
 
 				<% style_url = "/assets/champagne.jpg" %>
@@ -40,6 +44,7 @@
 				<tr>
 					<td><%= image_tag(style_url, size: "50x30") %></td>
 					<td>
+					<!-- provides appropriate link, depending on whether this form is rendered in the user_wines or wines controller -->
 						<% if controller_name == "user_wines" %>
 							
 							<%= link_to full_name, user_wine_path(wine) %>

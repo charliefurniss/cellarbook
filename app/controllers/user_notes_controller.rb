@@ -1,9 +1,11 @@
-class UserNotesController < ApplicationController
-    before_action :set_note, only: [:show, :edit, :update, :destroy]
-  def index
-    @notes = current_user.notes
+#UserNotesController operates the methods available to a logged in user
 
-    @title = "Your notes"
+class UserNotesController < ApplicationController
+    #calls private method to store relevant note in @note variable before any others. Only available to the show method
+    before_action :set_note, only: [:show]
+  def index
+
+    @notes = current_user.notes
 
   end
 
@@ -13,21 +15,6 @@ class UserNotesController < ApplicationController
 
     @wine_details = "#{@wine.name} #{@wine.vintage}"
     
-  end
-
-  def new
-  end
-
-  def create
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private

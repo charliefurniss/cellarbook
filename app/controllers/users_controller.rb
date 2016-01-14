@@ -1,8 +1,7 @@
+#handles users signing up, viewing and editin their profiles.
+
 class UsersController < ApplicationController
   before_action :authenticate, only: [:show]
-  def index
-  end
-
   def show
 
     @user = current_user
@@ -10,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def new
-
+    #calls method defined in application controller
     if logged_in?
 
       redirect_to root_path

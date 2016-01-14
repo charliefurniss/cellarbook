@@ -1,3 +1,6 @@
+<!-- Displays multiple notes. Rendered in user_notes/index and notes/index -->
+
+<!-- shows correct image depending on style of wine -->
 <% if @wine.style == "sparkling" %>
 
 	<% bottle_url = "/assets/champagne.jpg" %>
@@ -27,7 +30,7 @@
 	<div class="wineDetails">
 		<h3 class="wineName"><%= @wine.producer %></h3>
 		<h3 class="wineName"><%= "#{@wine.name} #{@wine.vintage}" %></h3>
-		<p class = "wineSpec"><a><%= @wine.style %></a>
+		<p class = "wineSpec"><a><%= @wine.style.titleize %></a>
 			
 			 |
 		
@@ -43,7 +46,7 @@
 		
 		|
 		
-		<a><%= @wine.grape %></a>
+		<br><a><%= @wine.grape %></a>
 			
 			 |
 	
