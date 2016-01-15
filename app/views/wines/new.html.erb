@@ -1,5 +1,12 @@
-<div class="backLink">	
+<div class="backLink">
+	<i class="fa fa-long-arrow-left"></i>
 	<%= link_to 'back to wines', user_wines_path %>
 </div>
 
-<%= render "/partials/new_wine_form" %>
+<div class="row">
+  	<div class="small-10 small-offset-1 columns">
+		<div id="newWineForm">
+			<%= render "/partials/new_wine_form" %>
+		</div>
+	</div>
+</div>			

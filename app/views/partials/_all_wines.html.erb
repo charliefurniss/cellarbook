@@ -20,46 +20,49 @@
 			<!-- establishes and sets the quantity of each wine -->
 			<% quantity = wine.bottles.where(:user => current_user, :drunk => false).count %>
 			<!-- displays different bottle image depending on the style of wine -->
-			<% if wine.style == "sparkling" %>
+			<% if quantity > 0 %>
 
-				<% style_url = "/assets/champagne.jpg" %>
+				<% if wine.style == "sparkling" %>
 
-			<% elsif wine.style == "red" %>
+					<% style_url = "/assets/champagne.jpg" %>
 
-				<% style_url = "/assets/red.jpg" %>
+				<% elsif wine.style == "red" %>
+
+					<% style_url = "/assets/red.jpg" %>
+					
+				<% elsif wine.style == "white" %>
+
+					<% style_url = "/assets/white.jpg" %>
 				
-			<% elsif wine.style == "white" %>
+				<% elsif wine.style == "rose" %>
 
-				<% style_url = "/assets/white.jpg" %>
-			
-			<% elsif wine.style == "rose" %>
+					<% style_url = "/assets/rose.jpg" %>
 
-				<% style_url = "/assets/rose.jpg" %>
+				<% elsif wine.style == "sweet" %>
 
-			<% elsif wine.style == "sweet" %>
+					<% style_url = "/assets/sweet.jpg" %>				
 
-				<% style_url = "/assets/sweet.jpg" %>				
+				<% end %>
+					<tr>
+						<td><%= image_tag(style_url, size: "50x30") %></td>
+						<td>
+						<!-- provides appropriate link, depending on whether this form is rendered in the user_wines or wines controller -->
+							<% if controller_name == "user_wines" %>
+								
+								<%= link_to full_name, user_wine_path(wine) %>
 
-			<% end %>
-				<tr>
-					<td><%= image_tag(style_url, size: "50x30") %></td>
-					<td>
-					<!-- provides appropriate link, depending on whether this form is rendered in the user_wines or wines controller -->
-						<% if controller_name == "user_wines" %>
-							
-							<%= link_to full_name, user_wine_path(wine) %>
+							<% elsif controller_name == "wines" %>
 
-						<% elsif controller_name == "wines" %>
+								<%= link_to full_name, wine %>
 
-							<%= link_to full_name, wine %>
-
-						<% end %>
-					</td>
-					<td><%= wine.region %></td>
-					<td><%= wine.country %></td>
-					<td class="window"><%= "#{wine.window_start}–#{wine.window_end}" %></td>
-					<td class="quantity"><%= quantity %></td>
-				</tr>
+							<% end %>
+						</td>
+						<td><%= wine.region %></td>
+						<td><%= wine.country %></td>
+						<td class="window"><%= "#{wine.window_start}–#{wine.window_end}" %></td>
+						<td class="quantity"><%= quantity %></td>
+					</tr>
+				<% end %>
 			<% end %>		
 			</tbody>
 		</table>

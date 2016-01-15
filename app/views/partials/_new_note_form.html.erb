@@ -7,40 +7,40 @@
 
 					<h3>Add note</h3>
 
-			    <div class="field" id="textInput">
-			    	<%= f.label :appearance %>
-			    	<%= f.text_area :appearance %>
-			    </div>
+				    <div class="field" id="textInput">
+				    	<%= f.label :appearance %>
+				    	<%= f.text_area :appearance %>
+				    </div>
 
-			    <div class="field" id="textInput">
-			    	<%= f.label :nose %>
-			    	<%= f.text_area :nose %>
-			    </div>
+				    <div class="field" id="textInput">
+				    	<%= f.label :nose %>
+				    	<%= f.text_area :nose %>
+				    </div>
 
-			    <div class="field" id="textInput">
-			    	<%= f.label :palate %>
-			    	<%= f.text_area :palate %>
-			    </div>
-		    
-			    <div class="field" id="textInput">
-			    	<%= f.label :conclusion %>
-			    	<%= f.text_area :conclusion %>
-			    </div>
-			    <!-- .select offers a menu of options -->
-			    <div class="field" id="textInput">
-			    	<%= f.label :maturity %>
-			    	<%= f.select :rating , ['Too young', 'Can drink now, will improve' , 'Drink now' , 'Too old'] %>
-			    </div>
+				    <div class="field" id="textInput">
+				    	<%= f.label :palate %>
+				    	<%= f.text_area :palate %>
+				    </div>
+			    
+				    <div class="field" id="textInput">
+				    	<%= f.label :conclusion %>
+				    	<%= f.text_area :conclusion %>
+				    </div>
+				    <!-- .select offers a menu of options -->
+				    <div class="field" id="textInput">
+				    	<%= f.label :maturity %>
+				    	<%= f.select :rating , ['Too young', 'Can drink now, will improve' , 'Drink now' , 'Past its best'] %>
+				    </div>
 
-			    <div class="field" id="textInput">
-			    	<%= f.label :rating %>
-			    	<%= f.select :rating , ['1', '2' , '3' , '4' , '5' , '6' , '7' , '8' , '9' , '10'] %>
-			    </div>
+				    <div class="field" id="textInput">
+				    	<%= f.label :rating %>
+				    	<%= f.select :rating , ['1', '2' , '3' , '4' , '5' , '6' , '7' , '8' , '9' , '10'] %>
+				    </div>
 
-			    <div class="actions" id="submitButtonContainer">
-			      <%= f.submit "Add note", :class => 'submitButton'%>
-			    </div>
-		    </div>
+				    <div class="actions" id="submitButtonContainer">
+				      <%= f.submit "Add note", :class => 'submitButton' %>
+				    </div>
+		    	</div>
 				<%= token_tag %>
 			<% end %>
 		</div>
