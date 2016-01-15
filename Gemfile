@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'foundation-rails'
+#specify previous version of foundation as its update uses different class names
+gem 'foundation-rails', '~>5.5.3.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
