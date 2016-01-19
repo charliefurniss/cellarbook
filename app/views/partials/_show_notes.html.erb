@@ -1,7 +1,8 @@
 <div class="row">
 	<div class="small-12 columns">
 
-		<% if @notes %>
+	<!-- need to get this if statement working with the @notes variable -->
+		<% if @notes.first != nil %>
 
 			<table>
 				<thead>
@@ -41,7 +42,7 @@
 				</tbody>
 			</table>
 	
-	<% else %>
+	<% elsif @notes.first == nil %>
 
 		<h3 class="noNotes">No notes</h3>
 
