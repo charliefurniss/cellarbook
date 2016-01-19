@@ -32,23 +32,23 @@
 			<!-- displays different bottle image depending on the style of wine -->
 			<% if quantity > 0 %>
 
-				<% if wine.style == "sparkling" %>
+				<% if wine.style.downcase  == "sparkling" %>
 
 					<% style_url = "/assets/champagne.jpg" %>
 
-				<% elsif wine.style == "red" %>
+				<% elsif wine.style.downcase  == "red" %>
 
 					<% style_url = "/assets/red.jpg" %>
 					
-				<% elsif wine.style == "white" %>
+				<% elsif wine.style.downcase  == "white" %>
 
 					<% style_url = "/assets/white.jpg" %>
 				
-				<% elsif wine.style == "rose" %>
+				<% elsif wine.style.downcase  == "rose" %>
 
 					<% style_url = "/assets/rose.jpg" %>
 
-				<% elsif wine.style == "sweet" %>
+				<% elsif wine.style.downcase  == "sweet" %>
 
 					<% style_url = "/assets/sweet.jpg" %>				
 
