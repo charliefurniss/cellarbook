@@ -4,11 +4,10 @@ class WinesController < ApplicationController
   before_action :set_wine, only: [:show]
   #allows only logged in users to add wines. The authenticate method is defined in the Application controller and sends users to login page if they are not logged in
   before_action :authenticate, only: [:new]
+  
   def index
 
     @wines = Wine.all
-
-    @title = "CellarBook wines"
 
   end
 

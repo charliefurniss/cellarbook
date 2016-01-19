@@ -9,7 +9,7 @@
 		      	<th width="100">Region</th>
 		      	<th width="100">Country</th>
 		      	<th width="100">Drinking window</th>
-		      	<th width="50">In cellar</th>
+		      	<th width="50">Cellared</th>
 			    </tr>
 			</thead>
 
@@ -18,7 +18,17 @@
 			<!-- combines different elements of wine details -->	
 			<% full_name = "#{wine.producer} #{wine.name} #{wine.vintage}"	%>
 			<!-- establishes and sets the quantity of each wine -->
-			<% quantity = wine.bottles.where(:user => current_user, :drunk => false).count %>
+			
+			<% if current_user %>
+
+				<% quantity = wine.bottles.where(:user => current_user, :drunk => false).count %>
+
+			<% else %>
+
+				<% quantity = wine.bottles.where(:drunk => false).count %>
+
+			<% end %>	
+				
 			<!-- displays different bottle image depending on the style of wine -->
 			<% if quantity > 0 %>
 
