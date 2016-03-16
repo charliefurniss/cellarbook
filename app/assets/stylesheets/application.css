@@ -298,11 +298,6 @@ table, .wineForm {
 
 }
 
-/*.quantity, .window {
-
-	text-align: center;
-
-}*/
 
 .showImage {
 
@@ -311,14 +306,6 @@ table, .wineForm {
 	min-height: 250px;
 }
 
-/*.notesArea {
-
-	margin-top: 10px;
-	padding: 0px !important;
-	background-color: #f3f5f6;
-
-}*/
-
 .subNav {
 
 	display: inline;
@@ -326,3 +313,37 @@ table, .wineForm {
 
 }
 
+
+/*WINES LISTING*/
+
+.wines_content {
+	background-color: white;
+	padding: 40px;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	overflow: auto;
+}
+
+.wines_image {
+	display: inline;
+	float: left;
+	margin-right: 40px;
+}
+
+.wines_details {
+	display: inline;
+}
+
+.wines_element_container {
+	display: inline;
+}
+
+
+.wines_producer, 
+.wines_name {
+}
+
+.wines_name {
+}
+
+/*END OF WINES LISTING*/

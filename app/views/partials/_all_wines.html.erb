@@ -1,80 +1,65 @@
 <!-- displays wines index. Rendered in both wines and user_wines views -->
 <div class="row">
-	<div class="small-12 columns">
-		<table>
-			<thead>
-			    <tr>
-			    <th width="50">Style</th>
-		      	<th width="150">Name</i> </th>
-		      	<th width="100">Region</th>
-		      	<th width="100">Country</th>
-		      	<th width="100">Drinking window</th>
-		      	<th width="50">Cellared</th>
-			    </tr>
-			</thead>
-
-			<tbody>
+	<div class="small-12 columns list_container">
 			<% @wines.each do |wine| %>
 			<!-- combines different elements of wine details -->	
-			<% full_name = "#{wine.producer} #{wine.name} #{wine.vintage}"	%>
-			<!-- establishes and sets the quantity of each wine -->
+			<% wine_name = "#{wine.name} #{wine.vintage}"	%>
 			
+			<!-- establishes and sets the quantity of each wine -->
 			<% if current_user %>
-
 				<% quantity = wine.bottles.where(:user => current_user, :drunk => false).count %>
-
 			<% else %>
-
 				<% quantity = wine.bottles.where(:drunk => false).count %>
-
 			<% end %>	
 				
 			<!-- displays different bottle image depending on the style of wine -->
 			<% if quantity > 0 %>
-
 				<% if wine.style.downcase  == "sparkling" %>
-
 					<% style_url = "/assets/champagne.jpg" %>
-
 				<% elsif wine.style.downcase  == "red" %>
-
 					<% style_url = "/assets/red.jpg" %>
-					
 				<% elsif wine.style.downcase  == "white" %>
-
 					<% style_url = "/assets/white.jpg" %>
-				
 				<% elsif wine.style.downcase  == "rose" %>
-
 					<% style_url = "/assets/rose.jpg" %>
-
 				<% elsif wine.style.downcase  == "sweet" %>
+					<% style_url = "/assets/sweet.jpg" %>
+			<% end %>
 
-					<% style_url = "/assets/sweet.jpg" %>				
-
-				<% end %>
-					<tr>
-						<td><%= image_tag(style_url, size: "50x30") %></td>
-						<td>
+			<div class="wines_container">
+				<div class="wines_content">
+				<!-- <h5 class="wines_region"><%= wine.region %></h5>
+				<h5 class="wines_country"><%= wine.country %></h5>
+				<h5 class="wines_window"><%= "#{wine.window_start}–#{wine.window_end}" %></h5> -->
+					<div class="wines_image">
+						<%= image_tag(style_url, size: "130x210") %>
+					</div>					
+					<div class="wines_details">
+						<div class="wines_element_container">
+							<h2 class="wines_producer">
+								<%= wine.producer %>
+							</h2>
+						</div>
 						<!-- provides appropriate link, depending on whether this form is rendered in the user_wines or wines controller -->
+						<div class="wines_element_container">
+							<h2 class="wines_name">
 							<% if controller_name == "user_wines" %>
-								
-								<%= link_to full_name, user_wine_path(wine) %>
-
+								<%= link_to wine_name, user_wine_path(wine) %>
 							<% elsif controller_name == "wines" %>
-
-								<%= link_to full_name, wine %>
-
+								<%= link_to wine_name, wine %>
 							<% end %>
-						</td>
-						<td><%= wine.region %></td>
-						<td><%= wine.country %></td>
-						<td class="window"><%= "#{wine.window_start}–#{wine.window_end}" %></td>
-						<td class="quantity"><%= quantity %></td>
-					</tr>
+							</h2>
+						</div>
+						<div class="wines_bottles">
+							<% (1..quantity).each do |i| %>
+								<%= image_tag("/assets/bottle.png", size: "50x80") %>
+							<% end %>
+						</div>		
+					</div>	
+<!-- 					<h5 class="wines_quantity"><%= quantity %></h5>
+ -->				</div>
 				<% end %>
-			<% end %>		
-			</tbody>
-		</table>
+			<% end %>
+			</div>
 	</div>
 </div>	
