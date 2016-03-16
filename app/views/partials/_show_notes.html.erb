@@ -33,6 +33,9 @@
 							<td class="rating">
 								<!-- displays correct number of stars using a loop -->
 								<% (1..rating).each do |i| %>
+								  <i class="fa fa-star"></i>
+								<% end %>
+								<% (1..(10-rating)).each do |i| %>
 								  <i class="fa fa-star-o"></i>
 								<% end %>
 							

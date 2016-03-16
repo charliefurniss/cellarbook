@@ -322,6 +322,7 @@ table, .wineForm {
 	margin-bottom: 30px;
 	border-radius: 5px;
 	overflow: auto;
+	position: relative;
 }
 
 .wines_image {
@@ -332,18 +333,15 @@ table, .wineForm {
 
 .wines_details {
 	display: inline;
+	position: absolute;
+	bottom: 0px;
+	padding-bottom: 50px;
 }
 
-.wines_element_container {
-	display: inline;
+.wines_words_container {
+	padding-left: 10px; 	
 }
 
 
-.wines_producer, 
-.wines_name {
-}
-
-.wines_name {
-}
 
 /*END OF WINES LISTING*/

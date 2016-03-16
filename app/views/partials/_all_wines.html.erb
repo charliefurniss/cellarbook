@@ -35,13 +35,11 @@
 						<%= image_tag(style_url, size: "130x210") %>
 					</div>					
 					<div class="wines_details">
-						<div class="wines_element_container">
+						<div class="wines_words_container">
 							<h2 class="wines_producer">
 								<%= wine.producer %>
 							</h2>
-						</div>
 						<!-- provides appropriate link, depending on whether this form is rendered in the user_wines or wines controller -->
-						<div class="wines_element_container">
 							<h2 class="wines_name">
 							<% if controller_name == "user_wines" %>
 								<%= link_to wine_name, user_wine_path(wine) %>
@@ -52,12 +50,11 @@
 						</div>
 						<div class="wines_bottles">
 							<% (1..quantity).each do |i| %>
-								<%= image_tag("/assets/bottle.png", size: "50x80") %>
+								<%= image_tag("/assets/bottle.png", size: "30x80") %>
 							<% end %>
 						</div>		
 					</div>	
-<!-- 					<h5 class="wines_quantity"><%= quantity %></h5>
- -->				</div>
+				</div>
 				<% end %>
 			<% end %>
 			</div>

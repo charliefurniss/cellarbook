@@ -22,9 +22,15 @@
 			</tr>
 			<tr>
 			<!-- displays the correct number of stars using a loop between one and the appropriate rating score-->
-				<td class="noteCategory"><strong>Rating</td></strong><td class="noteCopy"><% (1..rating).each do |i| %>
+				<td class="noteCategory"><strong>Rating</strong></td>
+				<td class="noteCopy">
+					<% (1..rating).each do |i| %>
+						<i class="fa fa-star"></i>
+					<% end %>
+					<% (1..(10-rating)).each do |i| %>
 						<i class="fa fa-star-o"></i>
 					<% end %>
+				</td>	
 			</tr>			
 		</table>
 	</div>
