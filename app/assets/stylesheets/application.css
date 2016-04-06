@@ -16,301 +16,226 @@
 
  */
 
- .homepage {
+.homepage {
+	width:100%;
+	height:100%;
+	background-image: url("cellar8.jpg");
+	background-size:cover;
+}
 
-     width:100%;
-     height:100%;
-     background-image: url("cellar8.jpg");
-     background-size:cover;
+.homepage-inner {
+	 width:100%;
+	 height:100%;
+	 background-color: rgba(0,0,0,0.2);
+}
 
- }
-
- .homepage-inner {
-
-     width:100%;
-     height:100%;
-     background-color: rgba(0,0,0,0.2);
-
- }
-
- .homepage #welcome {
-
-     position: relative;
-     top: 50%;
-     transform: translateY(-50%);
-
- }
+.homepage #welcome {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
  
- .homepage #welcome h1 {
+.homepage #welcome h1 {
+	color:white !important;
+}
 
-     color:white !important;
+.homepageTitle {
+	font-size: 66px;
+}
 
- }
+.homepageCopy {
+	font-size: 33px;
+	color: white;
+}
 
- .homepageTitle {
-
- 	font-size: 66px;
-
- }
-
- .homepageCopy {
-
- 	font-size: 33px;
- 	color: white;
-
- }
-
- .formArea {
-
- 	margin: 0 auto;
- 	margin-top: 20px;
-
- }
+.formArea {
+	margin: 0 auto;
+	margin-top: 20px;
+}
 
 .userForm {
-
 	text-align: left;
 	background-color: rgba(0,0,0,0.2);
 	padding: 20px;
 	margin-top: 20px
-
 }
 
 .userForm h1 {
-
 	max-width: 400px;
 	margin: 0 auto;
 	margin-bottom: 20px;
 	text-align: left;
 	font-size: 33px;
-
 }
 
 .userForm h3 {
-
 	color: white;
 	padding-left: 30px;
-
 }
 
 .userForm label {
-
 	font-weight: 110;
 	font-size: 14px !important;
-
 }
 
 .userForm .submitButton {
-
 	height: 50px;
 	width: 100%;
 	margin: 10px auto;
 	color: white;
 	background-color: #008CBA;
 	border: none;
-
 }
 
 .submitButton {
-
 	height: 50px;
 	max-width: 400px;
 	color: white;
 	border: none;
 	font-size: 20px;
-
 }
 
 #submitButtonContainer {
-
 	margin: 0px auto;
 	text-align: center;
-
 }
 
 
 #textInput {
-
 	text-align: left;
 	display: block;
 	margin: 0px auto !important;
 	padding: 0px;
 	margin-bottom: 20px;
 	max-width: 400px;
-
 }
 
 #note_appearance, #note_nose, #note_palate, #note_conclusion {
-
 	clear: both;
 	float: left;
 	height: 100%;
 	width: 100%;
-
 }
 
 #signInText {
-
 	text-align: left;
 	display: block;
 	margin: 0px auto !important;
 	padding: 0px;
 	margin-bottom: 20px;
 	max-width: 400px;
-
 }
 
 label {
-
 	font-size: 20px !important;
-
 }
 
 #topNav {
-
 	background-color: black !important;
 	background-size: cover;
-
 }
 
 #mainBackground {
-
 	background-color: #272727 !important;
 	background-size: cover;
 	padding-bottom: 20px;
-
 }
 
 #subNav, #notesArea {
-
 	background-color: #F4F3F3 !important;
-
 }
 
 .top-bar .name h1 a {
-
 	padding-left: 0px !important;
-
 }
 
 #addNoteToDrink {
-
 	position: relative;	
 	min-height: 250px;
 	padding: 0px;
-
 }
 
 #addNoteButton {
-
 	position: absolute;
 	right: 0px;
 	margin: 0px;
 	bottom: 0px;
-
 }
 
 #toDrink {
-
 	clear: right;
 	float: right;
 	color: white;
 	padding: 16px 23px;
 	text-align: center;
 	background-color: red;
-
 }
 
 .head {
-
 	margin-top: 20px;
 	color: white;
-
 }
 
 .backLink {
-
 	margin: 20px 0px;
 	color: white !important;
-
 }
 
 table, .wineForm {
-
 	margin: 0 auto;
 	margin-top: 20px;
-
 }
 
 .sub-nav li {
-
 	margin-left: 0px;
-
 }
 
 #addNoteToDrink {
-
 	float: right;
-
 }
 
 #newNoteForm {
-
 	display: none;
-
 }
 
 .active {
-
 	border-bottom-width: 3px;
 	border-bottom-color: blue;
-
 }
 
 .field {
-
 	max-width: 300px;
 	display: inline-block;
 	margin: 0 auto;
-
 }
 
 .wineName {
-
 	font-size: 33px;
 	color: white;
-
 }
 
 .wineDetails {
-
 	position:relative;
 	padding-bottom: 10px;
 	min-height: 250px;
 	color: white;
-
 }
 
 .wineSpec {
-
 	position: absolute;
 	bottom: 0px;
-
 }
 
 
 .showImage {
-
 	display: inline-block;
 	vertical-align: middle;
 	min-height: 250px;
 }
 
 .subNav {
-
 	display: inline;
 	margin: 5px;
-
 }
 
 
@@ -348,15 +273,24 @@ table, .wineForm {
 
 /*NOTES LIST*/
 
+.note_username, .note_date {
+	display: inline-block;
+	margin-right: 30px;
+}
+
 .note_container {
-	
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	margin-top: 30px;
+}
+
+.note_container:hover {
+	background-color: #DDDDDD;
 }
 
 .note_content {
-	background-color: #FFFFFF;
-	margin-bottom: 30px;
-	border-radius: 5px;
 	padding: 40px;
+	color: black;
 }
 
 

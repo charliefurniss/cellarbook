@@ -1,37 +1,35 @@
 <div class="row">
 	<div class="small-12 columns">
-
 	<!-- need to get this if statement working with the @notes variable -->
 		<% if @notes.first != nil %>
 			<% @notes.each do |note| %>
 			<% full_name = "#{note.bottle.wine.producer} #{note.bottle.wine.name} #{note.bottle.wine.vintage}"	%>
 			<% rating = note.rating %>
-			<div class="note_content">
-				<!-- localize changes date/time format -->
-				<p class="note_date"><%= localize(note.created_at, :format => :uk) %></p>
-				<p class="note_username">Posted by: <%= note.bottle.user.name %></p>
-				<p class="note_winename"><%= full_name %></p>
-				<!-- provides the correct link, depending on whether the user is viewing their own wines or all wines -->
-				<% if controller_name == "user_notes" || controller_name == "user_wines" %>
-					<p class="note_note"><%= link_to truncate(note.conclusion, :length => 70), user_note_path(note) %></p>
-				<% elsif controller_name == "notes" || controller_name == "wines" %>
-					<p class="note_note"><%= link_to truncate(note.conclusion, :length => 70), note %></p>
-				<% end %>
-				<div class="rating">
-					<!-- displays correct number of stars using a loop -->
-					<% (1..rating).each do |i| %>
-					  <i class="fa fa-star"></i>
-					<% end %>
-					<% (1..(10-rating)).each do |i| %>
-					  <i class="fa fa-star-o"></i>
-					<% end %>
-				</div>	
-			</div>
+			<!-- provides the correct link, depending on whether the user is viewing their own wines or all wines -->
+			<%= link_to note do %>
+				<div class="note_container">
+					<div class="note_content">
+						<p class="note_username">Posted by: <%= note.bottle.user.name %></p>
+						<!-- localize changes date/time format -->
+						<p class="note_date"><%= localize(note.created_at, :format => :uk) %></p>
+						<h3 class="note_winename"><%= full_name %></h3>
+						<p class="note_note"><%= truncate(note.conclusion, :length => 70) %></p>
+						<div class="rating">
+							<!-- displays correct number of stars using a loop -->
+							<% (1..rating).each do |i| %>
+							  <i class="fa fa-star"></i>
+							<% end %>
+							<% (1..(10-rating)).each do |i| %>
+							  <i class="fa fa-star-o"></i>
+							<% end %>
+						</div>	
+					</div>
+				</div>
 			<% end %>
+		<% end %>
 
-	<% elsif @notes.first == nil %>
-		<h3 class="noNotes">No notes</h3>
-	<% end %>	
-
+		<% elsif @notes.first == nil %>
+			<h3 class="noNotes">No notes</h3>
+		<% end %>	
 	</div>
 </div>
