@@ -263,11 +263,17 @@ table, .wineForm {
 	padding-bottom: 50px;
 }
 
-.wines_words_container {
+.wines_words_container, .wine_links {
 	padding-left: 10px; 	
 }
 
-
+.wine_link {
+	font-style: 200;
+	color: white;
+	background-color: orange;
+	border-radius: 5px;
+	padding: 2px 10px;
+}
 
 /*END OF WINES LISTING*/
 

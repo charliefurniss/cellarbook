@@ -1,62 +1,56 @@
 <!-- displays wines index. Rendered in both wines and user_wines views -->
 <div class="row">
 	<div class="small-12 columns list_container">
-			<% @wines.each do |wine| %>
-			<!-- combines different elements of wine details -->	
-			<% wine_name = "#{wine.name} #{wine.vintage}"	%>
+		<% @wines.each do |wine| %>
+		<!-- combines different elements of wine details -->	
+		<% wine_name = "#{wine.name} #{wine.vintage}"	%>
+		
+		<!-- establishes and sets the quantity of each wine -->
+		<% if current_user %>
+			<% quantity = wine.bottles.where(:user => current_user, :drunk => false).count %>
+		<% else %>
+			<% quantity = wine.bottles.where(:drunk => false).count %>
+		<% end %>	
 			
-			<!-- establishes and sets the quantity of each wine -->
-			<% if current_user %>
-				<% quantity = wine.bottles.where(:user => current_user, :drunk => false).count %>
-			<% else %>
-				<% quantity = wine.bottles.where(:drunk => false).count %>
-			<% end %>	
-				
-			<!-- displays different bottle image depending on the style of wine -->
-			<% if quantity > 0 %>
-				<% if wine.style.downcase  == "sparkling" %>
-					<% style_url = "/assets/champagne.jpg" %>
-				<% elsif wine.style.downcase  == "red" %>
-					<% style_url = "/assets/red.jpg" %>
-				<% elsif wine.style.downcase  == "white" %>
-					<% style_url = "/assets/white.jpg" %>
-				<% elsif wine.style.downcase  == "rose" %>
-					<% style_url = "/assets/rose.jpg" %>
-				<% elsif wine.style.downcase  == "sweet" %>
-					<% style_url = "/assets/sweet.jpg" %>
-			<% end %>
+		<!-- displays different bottle image depending on the style of wine -->
+		<% if quantity > 0 %>
+			<% if wine.style.downcase  == "sparkling" %>
+				<% style_url = "/assets/champagne.jpg" %>
+			<% elsif wine.style.downcase  == "red" %>
+				<% style_url = "/assets/red.jpg" %>
+			<% elsif wine.style.downcase  == "white" %>
+				<% style_url = "/assets/white.jpg" %>
+			<% elsif wine.style.downcase  == "rose" %>
+				<% style_url = "/assets/rose.jpg" %>
+			<% elsif wine.style.downcase  == "sweet" %>
+				<% style_url = "/assets/sweet.jpg" %>
+		<% end %>
 
-			<div class="wines_container">
-				<div class="wines_content">
-				<!-- <h5 class="wines_region"><%= wine.region %></h5>
-				<h5 class="wines_country"><%= wine.country %></h5>
-				<h5 class="wines_window"><%= "#{wine.window_start}–#{wine.window_end}" %></h5> -->
-					<div class="wines_image">
-						<%= image_tag(style_url, size: "130x210") %>
-					</div>					
-					<div class="wines_details">
-						<div class="wines_words_container">
-							<h2 class="wines_producer">
-								<%= wine.producer %>
-							</h2>
-						<!-- provides appropriate link, depending on whether this form is rendered in the user_wines or wines controller -->
-							<h2 class="wines_name">
-							<% if controller_name == "user_wines" %>
-								<%= link_to wine_name, user_wine_path(wine) %>
-							<% elsif controller_name == "wines" %>
-								<%= link_to wine_name, wine %>
-							<% end %>
-							</h2>
-						</div>
-						<div class="wines_bottles">
-							<% (1..quantity).each do |i| %>
-								<%= image_tag("/assets/bottle.png", size: "30x80") %>
-							<% end %>
-						</div>		
-					</div>	
+			<%= link_to wine do %>
+				<div class="wines_container">
+					<div class="wines_content">
+					<!-- <h5 class="wines_region"><%= wine.region %></h5>
+					<h5 class="wines_country"><%= wine.country %></h5>
+					<h5 class="wines_window"><%= "#{wine.window_start}–#{wine.window_end}" %></h5> -->
+						<div class="wines_image">
+							<%= image_tag(style_url, size: "130x210") %>
+						</div>					
+						<div class="wines_details">
+							<div class="wines_words_container">
+								<h2 class="wines_producer"><%= wine.producer %></h2>
+								<h2 class="wines_name"><%= wine.name %> <%= wine.vintage %></h2>
+							</div>
+							<div class="wines_bottles">
+								<% (1..quantity).each do |i| %>
+									<%= image_tag("/assets/bottle.png", size: "30x80") %>
+								<% end %>
+							</div>		
+						</div>	
+					</div>
+					<% end %>
+				
 				</div>
 				<% end %>
 			<% end %>
-			</div>
 	</div>
 </div>	
