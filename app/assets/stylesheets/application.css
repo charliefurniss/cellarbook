@@ -317,7 +317,7 @@ table, .wineForm {
 /*WINES LISTING*/
 
 .wines_content {
-	background-color: white;
+	background-color: #FFFFFF;
 	padding: 40px;
 	margin-bottom: 30px;
 	border-radius: 5px;
@@ -345,3 +345,19 @@ table, .wineForm {
 
 
 /*END OF WINES LISTING*/
+
+/*NOTES LIST*/
+
+.note_container {
+	
+}
+
+.note_content {
+	background-color: #FFFFFF;
+	margin-bottom: 30px;
+	border-radius: 5px;
+	padding: 40px;
+}
+
+
+/*END OF NOTES LIST*/
