@@ -241,11 +241,14 @@ table, .wineForm {
 
 /*WINES LISTING*/
 
-.wines_content {
+.wines_container {
 	background-color: #FFFFFF;
-	padding: 40px;
 	margin-bottom: 30px;
 	border-radius: 5px;
+}
+
+.wines_content {
+	padding: 40px;
 	overflow: auto;
 	position: relative;
 }
@@ -257,13 +260,13 @@ table, .wineForm {
 }
 
 .wines_details {
-	display: inline;
+	display: inline-block;
 	position: absolute;
 	bottom: 0px;
 	padding-bottom: 50px;
 }
 
-.wines_words_container, .wine_links {
+.wines_words_container {
 	padding-left: 10px; 	
 }
 
@@ -271,8 +274,22 @@ table, .wineForm {
 	font-style: 200;
 	color: white;
 	background-color: orange;
-	border-radius: 5px;
+	border-radius: 3px;
 	padding: 2px 10px;
+}
+
+.display_wine_link_container {
+	margin: 30px;
+	clear: both;
+}
+
+.display_wine_link {
+	text-align: left;
+	background-color: #008CBA;
+	border-radius: 5px;
+	color: #FFFFFF;
+	position: absolute;
+	padding: 10px 40px;
 }
 
 /*END OF WINES LISTING*/

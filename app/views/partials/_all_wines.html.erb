@@ -26,17 +26,17 @@
 				<% style_url = "/assets/sweet.jpg" %>
 		<% end %>
 
-			<%= link_to wine do %>
+			
 				<div class="wines_container">
 					<div class="wines_content">
-					<!-- <h5 class="wines_region"><%= wine.region %></h5>
-					<h5 class="wines_country"><%= wine.country %></h5>
-					<h5 class="wines_window"><%= "#{wine.window_start}–#{wine.window_end}" %></h5> -->
 						<div class="wines_image">
 							<%= image_tag(style_url, size: "130x210") %>
 						</div>					
 						<div class="wines_details">
 							<div class="wines_words_container">
+								<a class="wines_region wine_link"><%= wine.region %></a>
+								<a class="wines_country wine_link"><%= wine.country %></a>
+								<a class="wines_window wine_link"><%= "#{wine.window_start}–#{wine.window_end}" %></a>
 								<h2 class="wines_producer"><%= wine.producer %></h2>
 								<h2 class="wines_name"><%= wine.name %> <%= wine.vintage %></h2>
 							</div>
@@ -45,10 +45,13 @@
 									<%= image_tag("/assets/bottle.png", size: "30x80") %>
 								<% end %>
 							</div>		
-						</div>	
+						</div>
+						<%= link_to wine do %>
+							<div class="display_wine_link_container">
+								<h4 class="display_wine_link">Show wine details</h4>	
+							</div>
+						<% end %>	
 					</div>
-					<% end %>
-				
 				</div>
 				<% end %>
 			<% end %>
