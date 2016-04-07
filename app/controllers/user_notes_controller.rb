@@ -3,6 +3,7 @@
 class UserNotesController < ApplicationController
     #calls private method to store relevant note in @note variable before any others. Only available to the show method
     before_action :set_note, only: [:show]
+  
   def index
 
     @notes = current_user.notes
@@ -14,7 +15,17 @@ class UserNotesController < ApplicationController
     @wine = @note.bottle.wine
 
     @wine_details = "#{@wine.name} #{@wine.vintage}"
+
+    @notes = current_user.notes
     
+    ratings_array ||= []
+
+    @notes.each do |note|
+      ratings_array.push(note.rating)
+    end
+
+    @av_rating = (ratings_array.sum / ratings_array.size.to_f).round
+
   end
 
   private

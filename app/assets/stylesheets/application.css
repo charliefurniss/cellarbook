@@ -327,6 +327,11 @@ table, .wineForm {
 	color: white;
 }
 
+.show_wine_av_rating {
+	margin: 0px;
+	color: black;
+}
+
 .wineSpec {
 	position: absolute;
 	bottom: 0px;

@@ -11,7 +11,8 @@
 			<%= link_to user_note_path(note) do %>
 				<div class="note_container">
 					<div class="note_content">
-						<h3 class="note_winename"><%= full_name %></h3>
+						<!-- localize changes date/time format -->
+						<p class="note_date">Date added: <%= localize(note.created_at, :format => :uk) %></p>
 						<div class="note_rating">
 							<!-- displays correct number of stars using a loop -->
 							<% (1..rating).each do |i| %>
@@ -21,17 +22,13 @@
 							  <i class="fa fa-star-o"></i>
 							<% end %>
 						</div>
+						<h3 class="note_winename"><%= full_name %></h3>
 						<p class="note_note"><%= note.conclusion %></p>
 						<p class="note_username">Posted by: <%= note.bottle.user.name %></p>
-						<!-- localize changes date/time format -->
-						<p class="note_date">Date added: <%= localize(note.created_at, :format => :uk) %></p>
 					</div>
 				</div>
 			<% end %>
 		<% end %>
-
-		<% elsif @notes.first == nil %>
-			<h3 class="noNotes">No notes</h3>
 		<% end %>	
 	</div>
 </div>
