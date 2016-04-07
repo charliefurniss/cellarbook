@@ -264,7 +264,8 @@ table, .wineForm {
 .wines_image {
 	display: inline;
 	float: left;
-	margin-right: 40px;
+	margin-left: 40px;
+	margin-right: 70px;
 }
 
 .wines_details {
