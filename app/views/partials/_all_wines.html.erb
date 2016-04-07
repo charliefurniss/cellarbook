@@ -37,12 +37,12 @@
 								<a class="wines_region wine_link"><%= wine.region %></a>
 								<a class="wines_country wine_link"><%= wine.country %></a>
 								<a class="wines_window wine_link"><%= "#{wine.window_start}–#{wine.window_end}" %></a>
-								<h2 class="wines_producer"><%= wine.producer %></h2>
-								<h2 class="wines_name"><%= wine.name %> <%= wine.vintage %></h2>
+								<h3 class="wines_producer"><%= wine.producer %></h3>
+								<h3 class="wines_name"><%= wine.name %> <%= wine.vintage %></h3>
 							</div>
 							<%= link_to wine do %>
 								<div class="display_wine_link_container">
-									<h4 class="display_wine_link">Show wine details</h4>	
+									<h4 class="display_wine_link">View wine details</h4>	
 								</div>
 							<% end %>		
 						</div>

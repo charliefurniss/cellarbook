@@ -269,25 +269,32 @@ table, .wineForm {
 
 .wines_details {
 	display: inline-block;
-	position: absolute;
-	bottom: 0px;
-	padding-bottom: 40px;
+	position: relative;
+	width: 500px;
+	height: 195px;
 }
-
-/*.wines_words_container {
-	padding-left: 10px; 	
-}*/
 
 .wine_link {
 	font-style: 200;
+	font-size: 14px;
 	color: white;
 	background-color: orange;
 	border-radius: 3px;
 	padding: 2px 10px;
 }
 
-.display_wine_link_container {
-	clear: both;
+.wines_producer {
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+
+.wines_name {
+	margin: 0px;
+}
+
+.display_wine_link_container{
+	position: absolute;
+	bottom: 0px;
 }
 
 .display_wine_link {
@@ -296,6 +303,9 @@ table, .wineForm {
 	border-radius: 5px;
 	color: #FFFFFF;
 	padding: 10px 40px;
+	width: 100%;
+	font-size: 20px;
+	bottom: 0px;
 }
 
 /*END OF WINES LISTING*/
