@@ -48,6 +48,13 @@
 	color: white;
 }
 
+.alert-message {
+	background-color: orange;
+	color: white;
+	font-size: 14px;
+	padding: 20px 20px;
+}
+
 .formArea {
 	margin: 0 auto;
 	margin-top: 20px;
@@ -55,7 +62,7 @@
 
 .userForm {
 	text-align: left;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(0,0,0,0.4);
 	padding: 20px;
 	margin-top: 20px
 }

@@ -4,6 +4,14 @@
     <div class="homepage-inner">
         <div class="row" id="welcome">
             <div class="small-6 columns small-offset-3 text-center">
+
+            	<!-- Foundation code to show notices messages -->
+            	  <% flash.each do |name, msg| %>
+            	    <% if msg.is_a?(String) %>
+            	      <%= content_tag :div, msg, class: "alert-message" %>
+            	    <% end %>
+            	  <% end %>
+
             	<div class="userForm">
 					<h1>Log in</h1>
 
