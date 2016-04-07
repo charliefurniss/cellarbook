@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
   	# user has sent email and password
 
   	# determine if the user/email exists (using the email submitted in the form in users/new view)
-
   	user = User.find_by_email(params[:email])
 
   	# .authenticate encrypts the password sent from the form and checks the encrypted hash against the database returning true or false depending on whether it exists
