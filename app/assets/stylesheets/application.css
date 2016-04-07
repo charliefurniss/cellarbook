@@ -225,7 +225,6 @@ table, .wineForm {
 .wines_container {
 	background-color: #FFFFFF;
 	margin-bottom: 30px;
-	border-radius: 5px;
 }
 
 .wines_content {
@@ -234,11 +233,14 @@ table, .wineForm {
 	position: relative;
 }
 
+.wines_image_container {
+	display: block;
+	width: 100%;
+}
+
 .wines_image {
-	display: inline;
-	float: left;
-	margin-left: 40px;
-	margin-right: 70px;
+	display: block;
+	margin: 0 auto;
 }
 
 .wines_details {
