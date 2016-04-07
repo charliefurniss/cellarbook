@@ -4,7 +4,7 @@ $(document).ready(function() {
 
 		var form = $('#newNoteForm');
 
-		var button = $('#addNoteButton');
+		var button = $('#add_note_button');
 
 		button.on('click', function(){
 			form.toggle('slow');

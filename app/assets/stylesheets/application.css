@@ -143,13 +143,13 @@ label {
 	background-size: cover;
 }
 
-#mainBackground {
+#mainBackground, #notesArea {
 	background-color: #272727 !important;
 	background-size: cover;
 	padding-bottom: 20px;
 }
 
-#subNav, #notesArea {
+#subNav {
 	background-color: #F4F3F3 !important;
 }
 
@@ -157,17 +157,14 @@ label {
 	padding-left: 0px !important;
 }
 
+.fa-long-arrow-left {
+	color: #008CBA;
+}
+
 #addNoteToDrink {
 	position: relative;	
 	min-height: 250px;
 	padding: 0px;
-}
-
-#addNoteButton {
-	position: absolute;
-	right: 0px;
-	margin: 0px;
-	bottom: 0px;
 }
 
 #toDrink {
@@ -217,37 +214,13 @@ table, .wineForm {
 	margin: 0 auto;
 }
 
-.wineName {
-	font-size: 33px;
-	color: white;
-}
-
-.wineDetails {
-	position:relative;
-	padding-bottom: 10px;
-	min-height: 250px;
-	color: white;
-}
-
-.wineSpec {
-	position: absolute;
-	bottom: 0px;
-}
-
-
-.showImage {
-	display: inline-block;
-	vertical-align: middle;
-	min-height: 250px;
-}
-
 .subNav {
 	display: inline;
 	margin: 5px;
 }
 
 
-/*WINES LISTING*/
+/*WINES INDEX LISTING*/
 
 .wines_container {
 	background-color: #FFFFFF;
@@ -280,8 +253,8 @@ table, .wineForm {
 	font-size: 14px;
 	color: white;
 	background-color: orange;
-	border-radius: 3px;
 	padding: 2px 10px;
+	margin-bottom: 15px;
 }
 
 .wines_producer {
@@ -301,7 +274,6 @@ table, .wineForm {
 .display_wine_link {
 	text-align: center;
 	background-color: #008CBA;
-	border-radius: 5px;
 	color: #FFFFFF;
 	padding: 10px 40px;
 	width: 100%;
@@ -309,7 +281,78 @@ table, .wineForm {
 	bottom: 0px;
 }
 
-/*END OF WINES LISTING*/
+/*END OF WINES INDEX LISTING*/
+
+/*WINES SHOW*/
+
+@media screen and (max-width: 600px) {
+	.show-image {
+		visibility: hidden;
+	}
+}
+
+.show_wine_container {
+	background-color: #FFFFFF;
+	padding: 40px 0px;
+	overflow: auto;
+	width: 100%;
+}
+
+.show-image {
+	display: block;
+	vertical-align: middle;
+	height: 270px;
+	margin: 0 auto;
+}
+
+.show_wine_producer, .show_wine_name {
+	font-size: 28px;
+}
+
+.show_wine_name {
+	margin-top: 0px;
+	margin-bottom: 30px;
+}
+
+.show_wine_producer {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.show_wine_details {
+	position: relative;
+	height: 270px;
+	color: white;
+}
+
+.wineSpec {
+	position: absolute;
+	bottom: 0px;
+}
+
+#add_note_button {
+	margin-top: 0px;
+	display: block;
+	width: 100%;
+	font-size: 24px;
+}
+
+#note_button_container {
+	width: 100%;
+	margin-top: 40px;
+}
+
+#quantity_container {
+	margin-left: -15px;
+}
+
+.quantity_bottles {
+	display: inline-block;
+	margin-top: 5px;
+	margin-right: -30px;
+}
+
+/*END OF WINES SHOW*/
 
 /*NOTES LIST*/
 
@@ -320,7 +363,6 @@ table, .wineForm {
 
 .note_container {
 	background-color: #FFFFFF;
-	border-radius: 5px;
 	margin-top: 30px;
 }
 
