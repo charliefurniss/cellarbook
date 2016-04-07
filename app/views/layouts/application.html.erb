@@ -36,7 +36,7 @@
                 <!-- Changes the display depending on whether a user is logged in or not -->
                 <% if current_user %>
                   <ul class="right">
-                    <li class="active"><%= link_to 'Log out' , sessions_path , method: :delete, data: {confirm: 'Are you sure?'} %></li>
+                    <li class="active"><%= link_to 'Log out' , sessions_path , method: :delete%></li>
                   </ul>
                   <ul class="right">
                     <li><%= link_to "#{current_user.name.titleize}" , user_path(current_user) %></li>
@@ -84,6 +84,14 @@
          <% end %>
         </div>
       </div>
+      <div class="small-6 columns small-offset-3 text-center">
+        <!-- Foundation code to show notices messages -->
+          <% flash.each do |name, msg| %>
+            <% if msg.is_a?(String) %>
+              <%= content_tag :div, msg, class: "alert-message" %>
+            <% end %>
+          <% end %>
+      </div>    
       
       <%= yield %>
            

@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   		session[:user_id] = user.id
 
   		#tells you that you have logged in successfully, not that you are already logged in
-  		redirect_to user_wines_path, notice: "logged in"
+  		redirect_to user_wines_path
 
   	else
       #otherwise shows user a new login form
@@ -28,6 +28,7 @@ class SessionsController < ApplicationController
   def destroy
   	#unset the session id (ie, log out) and redirect
   	session[:user_id] = nil
-  	redirect_to "/sessions/new"
+  	flash[:info] = "You have now been signed out. See you again soon!"
+    redirect_to root_url
   end
 end
