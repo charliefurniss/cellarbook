@@ -271,12 +271,12 @@ table, .wineForm {
 	display: inline-block;
 	position: absolute;
 	bottom: 0px;
-	padding-bottom: 50px;
+	padding-bottom: 40px;
 }
 
-.wines_words_container {
+/*.wines_words_container {
 	padding-left: 10px; 	
-}
+}*/
 
 .wine_link {
 	font-style: 200;
@@ -287,16 +287,14 @@ table, .wineForm {
 }
 
 .display_wine_link_container {
-	margin: 30px;
 	clear: both;
 }
 
 .display_wine_link {
-	text-align: left;
+	text-align: center;
 	background-color: #008CBA;
 	border-radius: 5px;
 	color: #FFFFFF;
-	position: absolute;
 	padding: 10px 40px;
 }
 

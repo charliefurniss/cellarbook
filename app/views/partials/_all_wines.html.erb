@@ -40,17 +40,12 @@
 								<h2 class="wines_producer"><%= wine.producer %></h2>
 								<h2 class="wines_name"><%= wine.name %> <%= wine.vintage %></h2>
 							</div>
-							<div class="wines_bottles">
-								<% (1..quantity).each do |i| %>
-									<%= image_tag("/assets/bottle.png", size: "30x80") %>
-								<% end %>
-							</div>		
+							<%= link_to wine do %>
+								<div class="display_wine_link_container">
+									<h4 class="display_wine_link">Show wine details</h4>	
+								</div>
+							<% end %>		
 						</div>
-						<%= link_to wine do %>
-							<div class="display_wine_link_container">
-								<h4 class="display_wine_link">Show wine details</h4>	
-							</div>
-						<% end %>	
 					</div>
 				</div>
 				<% end %>
