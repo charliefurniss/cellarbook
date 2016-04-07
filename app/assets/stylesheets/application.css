@@ -359,8 +359,36 @@ table, .wineForm {
 /*NOTES LIST*/
 
 .note_username, .note_date {
-	display: inline-block;
-	margin-right: 30px;
+	margin-bottom: 10px;
+	font-weight: 200;
+}
+
+.note_username {
+	font-size: 18px;
+	margin-top: 10px;
+}
+
+.note_date {
+	font-size: 14px;
+}
+
+.note_winename {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.note_note {
+	margin-top: 0px;
+	margin-bottom: 20px;
+	font-weight: 200;
+}
+
+.note_rating {
+	margin-top: 0px;
+}
+
+.fa-star, .fa-star-o {
+	color: orange;
 }
 
 .note_container {
