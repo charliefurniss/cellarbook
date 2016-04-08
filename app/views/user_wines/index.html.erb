@@ -1,6 +1,12 @@
 <div class="row" id="mainBackground">
   <div class="small-10 small-offset-1 columns">
-  	<h5 class="head">Your wines</h5>   
-    <%= render "/partials/user_wines" %>
+  	<% if @wines.first == nil %>
+  		<%= link_to new_wine_path do %>
+  			<p class="alert-message user_wines_alert">You have no wines. Click here to get started</p>
+  		<% end %>
+  	<% else %>
+  		<h5 class="head">Your wines</h5>
+    	<%= render "/partials/user_wines" %>
+    <% end %>
   </div>
 </div>

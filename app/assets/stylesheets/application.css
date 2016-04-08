@@ -54,6 +54,11 @@
 	font-size: 14px;
 	padding: 20px 20px;
 	margin-top: 60px;
+	text-align: center;
+}
+
+.user_wines_alert {
+	font-size: 16px;
 }
 
 .formArea {
