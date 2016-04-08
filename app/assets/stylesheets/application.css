@@ -303,7 +303,6 @@ table, .wineForm {
 .show-image {
 	display: block;
 	vertical-align: middle;
-	height: 270px;
 	margin: 0 auto;
 }
 
@@ -313,7 +312,7 @@ table, .wineForm {
 
 .show_wine_name {
 	margin-top: 0px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 }
 
 .show_wine_producer {
@@ -347,6 +346,10 @@ table, .wineForm {
 #note_button_container {
 	width: 100%;
 	margin-top: 40px;
+}
+
+.bottles_remaining_container {
+	margin-top: 30px;
 }
 
 #quantity_container {
@@ -415,6 +418,12 @@ table, .wineForm {
 
 /*SHOW NOTE*/
 
+.show_note_wine_details {
+	position: relative;
+	height: 175px;
+	color: white;
+}
+
 .show_note_container {
 	background-color: #FFFFFF;
 	padding: 40px;
@@ -425,7 +434,7 @@ table, .wineForm {
 }
 
 .show_note_category {
-	font-weight: 500;
+	font-weight: 400;
 	margin-bottom: 0px;
 }
 
