@@ -13335,7 +13335,6 @@ table, .wineForm {
 
 .wines_image_container {
 	display: block;
-	width: 100%;
 }
 
 .wines_image {
@@ -13346,7 +13345,6 @@ table, .wineForm {
 .wines_details {
 	display: inline-block;
 	position: relative;
-	width: 500px;
 	height: 195px;
 }
 
