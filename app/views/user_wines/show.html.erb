@@ -30,11 +30,11 @@
 						<div class="small-3 columns">
 							<%= image_tag(bottle_url, :class => "show-image") %>
 						</div>
-						<div class="small-7 columns show_wine_details">
+						<div class="small-9 columns show_wine_details">
 							<div class="wine_links">
 								<a class="wine_link"><%= @wine.style.titleize %></a>
 								<a class="wine_link"><%= @wine.region %></a>
-								<a class="wine_link"><%= @wine.country %></a><br>
+								<a class="wine_link"><%= @wine.country %></a>
 								<a class="wine_link"><%= @wine.grape %></a>
 								<a class="wine_link"><%= "#{@wine.window_start}–#{@wine.window_end}" %></a>
 							</div>
@@ -48,8 +48,6 @@
 									</div>	
 								<% end %>
 							</div>	
-						</div>
-						<div class="small-2 columns">
 						</div>
 					</div>	
 			  </div>

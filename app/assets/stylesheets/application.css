@@ -410,5 +410,29 @@ table, .wineForm {
 	color: black;
 }
 
-
 /*END OF NOTES LIST*/
+
+
+/*SHOW NOTE*/
+
+.show_note_container {
+	background-color: #FFFFFF;
+	padding: 40px;
+}
+
+.show_note_content {
+	margin-bottom: 20px;
+}
+
+.show_note_category {
+	font-weight: 500;
+	margin-bottom: 0px;
+}
+
+.show_note_text {
+	font-size: 24px;
+	font-weight: 200;
+}
+
+
+/*END OF SHOW NOTE*/

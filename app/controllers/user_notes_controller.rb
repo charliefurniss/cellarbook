@@ -16,14 +16,17 @@ class UserNotesController < ApplicationController
 
     @wine_details = "#{@wine.name} #{@wine.vintage}"
 
-    @notes = current_user.notes
-    
+    #retrieves and stores all notes associated with that wine
+    wine_notes = @wine.notes
+      
     ratings_array ||= []
 
-    @notes.each do |note|
+    #stares the wine's rating from each note in an array
+    wine_notes.each do |note|
       ratings_array.push(note.rating)
     end
 
+    #calculates the average of all the ratings
     @av_rating = (ratings_array.sum / ratings_array.size.to_f).round
 
   end

@@ -4,34 +4,39 @@
 
 <div class="row">	
 	<div class="large-12 medium-12 small-12 columns">
-		<table>
-			<tr>
-				<td class="noteCategory"><strong>Appearance</td></strong><td class="noteCopy"><%= @note.appearance %></td>
-			</tr>
-			<tr>
-				<td class="noteCategory"><strong>Nose</td></strong><td class="noteCopy"><%= @note.nose %></td>
-			</tr>
-			<tr>
-				<td class="noteCategory"><strong>Palate</td></strong><td class="noteCopy"><%= @note.palate %></td>
-			</tr>
-			<tr>
-				<td class="noteCategory"><strong>Conclusion</td></strong><td class="noteCopy"><%= @note.conclusion %></td>
-			</tr>
-			<tr>
-				<td class="noteCategory"><strong>Maturity</td></strong><td class="noteCopy"><%= @note.maturity %></td>
-			</tr>
-			<tr>
-			<!-- displays the correct number of stars using a loop between one and the appropriate rating score-->
-				<td class="noteCategory"><strong>Rating</strong></td>
-				<td class="noteCopy">
+		<div class="show_note_container">
+			<div class="show_note_content">
+				<h5 class="show_note_category">Appearance</h5>
+				<p class="show_note_text"><%= @note.appearance %></p>
+			</div>
+			<div class="show_note_content">	
+				<h5 class="show_note_category">Nose</h5>
+				<p class="show_note_text"><%= @note.nose %></p>
+			</div>
+			<div class="show_note_content">	
+				<h5 class="show_note_category">Palate</h5>
+				<p class="show_note_text"><%= @note.palate %></p>
+			</div>
+			<div class="show_note_content">	
+				<h5 class="show_note_category">Conclusion</h5>
+				<p class="show_note_text"><%= @note.conclusion %></p>
+			</div>
+			<div class="show_note_content">	
+				<h5 class="show_note_category">Maturity</h5>
+				<p class="show_note_text"><%= @note.maturity %></p>
+			</div>
+			<div class="show_note_content">	
+				<!-- displays the correct number of stars using a loop between one and the appropriate rating score-->
+				<h5 class="show_note_category">Rating</h5>
+				<p class="show_note_text">
 					<% (1..rating).each do |i| %>
 						<i class="fa fa-star"></i>
 					<% end %>
 					<% (1..(10-rating)).each do |i| %>
 						<i class="fa fa-star-o"></i>
 					<% end %>
-				</td>	
-			</tr>			
-		</table>
+				</p>
+			</div>				
+		</div>
 	</div>
 </div>

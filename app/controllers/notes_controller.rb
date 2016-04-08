@@ -14,6 +14,19 @@ class NotesController < ApplicationController
   	#retrieves and stores the wine details associated with the note
     @wine = @note.bottle.wine
 
+    #retrieves and stores all notes associated with that wine
+    wine_notes = @wine.notes
+      
+    ratings_array ||= []
+
+    #stares the wine's rating from each note in an array
+    wine_notes.each do |note|
+      ratings_array.push(note.rating)
+    end
+
+    #calculates the average of all the ratings
+    @av_rating = (ratings_array.sum / ratings_array.size.to_f).round
+
   end
 
 
