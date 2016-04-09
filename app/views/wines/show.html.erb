@@ -39,10 +39,14 @@
 								<a class="wine_link"><%= "#{@wine.window_start}–#{@wine.window_end}" %></a>
 							</div>
 							<h3 class="show_wine_producer"><%= @wine.producer %></h3>
-							<h3 class="show_wine_name"><%= "#{@wine.name} #{@wine.vintage}" %></h3>	
+							<h3 class="show_wine_name"><%= "#{@wine.name} #{@wine.vintage}" %></h3>
+							<p class="show_wine_username_label">Held by:</p>
+							<% @users.each do |user| %>
+								<p class="show_wine_username"><%= user.name.titleize %> </p>
+							<% end %>	
 						</div>
 					</div>	
-			  	</div>
+			  </div>
 			</div>  
 		</div>
 	</div>	

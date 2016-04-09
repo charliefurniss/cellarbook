@@ -257,7 +257,7 @@ table, .wineForm {
 	font-style: 200;
 	font-size: 14px;
 	color: white;
-	background-color: orange;
+	background-color: #008CBA;
 	padding: 2px 10px;
 	margin-bottom: 15px;
 }
@@ -327,6 +327,19 @@ table, .wineForm {
 	position: relative;
 	height: 270px;
 	color: white;
+}
+
+.show_wine_username_label {
+	color: black;
+	margin-top: 20px;
+	margin-bottom: 0px
+}
+
+.show_wine_username {
+	display: inline;
+	color: black;
+	font-size: 22px;
+	margin-right: 10px;
 }
 
 .show_wine_av_rating {
