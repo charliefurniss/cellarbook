@@ -7,7 +7,9 @@ class WinesController < ApplicationController
   
   def index
 
-    @wines = Wine.all
+    @search = Wine.search(params[:q])
+    
+    @wines = @search.result
 
   end
 
