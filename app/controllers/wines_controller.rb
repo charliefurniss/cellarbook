@@ -8,8 +8,8 @@ class WinesController < ApplicationController
   def index
 
     @search = Wine.search(params[:q])
-    
     @wines = @search.result
+    @search.build_condition
 
   end
 

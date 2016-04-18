@@ -1,28 +1,20 @@
 <div class="row" id="mainBackground">
   <div class="small-10 small-offset-1 columns">
   	<h5 class="head">CellarBook wines</h5>
-  	<%= search_form_for @search do |f| %> 
-  	 	<div class="field">
-	  		<div class="row">
-	  	 		<div class="large-12 columns">
-	  	 			<%= f.label :name_cont, "Name contains" %>
-	  	 		</div>
-	  	 	</div>
-	  	 	<div class="row">
-		  	 	<div class="large-12 columns">
-		  	 	  <div class="row collapse">
-			  	 		<div class="small-10 columns">
-			  	 			<%= f.text_field :name_cont %>
-			  	 		</div>
-		  	 			<div class="small-2 columns">
-		  	 				<%= f.submit "Search", :class => 'button postfix'%>
-		  	 			</div>
-		  	  	</div>
-		  	  </div>
-	  	  </div>
-  	 	</div>
-
-  	 <% end %>   
+  	<%= search_form_for @search do |f| %>
+  		<%= f.condition_fields do |c| %>
+		  	<div class="field">
+		  		<%= c.attribute_fields do |a| %>
+		  			<%= a.attribute_select %>
+		  		<% end %>
+		  		<%= c.predicate_select %>
+		  		<%= c.value_fields do |v| %>
+		  			<%= v.text_field :value %>
+		  		<% end %>
+		  	</div>
+		  <% end %>
+		  <div><%= f.submit "Search" %></div>
+  	<% end %>   
     <%= render "/partials/all_wines" %>
   </div>
 </div>
