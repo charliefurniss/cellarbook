@@ -2,18 +2,10 @@
   <div class="small-10 small-offset-1 columns">
   	<h5 class="head">CellarBook wines</h5>
   	<%= search_form_for @search do |f| %> 
-  		<%= f.condition_fields do |c| %>
-	  	 	<div class="field">
-		  	 	<%= c.attribute_fields do |a| %>
-		  	 	  <%= a.attribute_select %>
-		  	 	<% end %>
-		  	 	<%= c.predicate_select only: [:cont] %>
-		  	 	<%= c.value_fields do |v| %>
-		  	 	  <%= v.text_field :value %>
-		  	 	<% end %>
-	  	 	</div>
-	  	<% end %> 	
-  	 	<div class="actions"><%= f.submit "Search" %></div>
+  	 	<div class="field">
+  	 	<%= f.search_field :producer_or_name_or_region_or_country_or_grape_cont %>
+  	 	</div>
+  	 	<%= f.submit %>
   	<% end %>   
     <%= render "/partials/all_wines" %>
   </div>

@@ -9,7 +9,6 @@ class WinesController < ApplicationController
 
     @search = Wine.search(params[:q])
     @wines = @search.result
-    @search.build_condition
   
   end
 
@@ -60,6 +59,7 @@ class WinesController < ApplicationController
   end
 
   private
+
     def set_wine
       @wine = Wine.find(params[:id])
     end
