@@ -35,7 +35,7 @@ gem 'jquery-turbolinks'
 
 gem 'font-awesome-sass'
 
-gem 'ransack'
+gem 'ransack', '~> 1.7.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
