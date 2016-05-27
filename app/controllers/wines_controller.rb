@@ -9,7 +9,8 @@ class WinesController < ApplicationController
 
     @search = Wine.search(params[:q])
     @wines = @search.result
-  
+    # @search.build_condition
+    
   end
 
   def show
@@ -59,6 +60,10 @@ class WinesController < ApplicationController
   end
 
   private
+
+    # ransacker :vintage do
+    #   Arel.sql("to_char(id, '9999')")
+    # end
 
     def set_wine
       @wine = Wine.find(params[:id])

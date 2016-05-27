@@ -1,12 +1,7 @@
 <div class="row" id="mainBackground">
   <div class="small-10 small-offset-1 columns">
   	<h5 class="head">CellarBook wines</h5>
-  	<%= search_form_for @search do |f| %> 
-  	 	<div class="field">
-  	 	<%= f.search_field :producer_or_name_or_region_or_country_or_grape_cont %>
-  	 	</div>
-  	 	<%= f.submit %>
-  	<% end %>   
+    <%= render "/partials/search_wine_form" %> 
     <%= render "/partials/all_wines" %>
   </div>
 </div>

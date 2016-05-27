@@ -1,0 +1,10 @@
+<div class="searchForm">
+	<%= search_form_for @search do |f| %> 
+	 	<div class="searchField small-9 columns">
+	 	<%= f.search_field :producer_or_name_or_region_or_country_or_grape_cont, placeholder: "Search" %>
+	 	</div>
+    <div class="small-3 columns searchButtonContainer">
+      <input type="submit" value="Search" class="searchSubmit" />
+    </div>
+	<% end %>
+</div> 

@@ -6,7 +6,8 @@ class UserWinesController < ApplicationController
   
   def index
 
-    @wines = current_user.wines
+    @search = current_user.wines.search(params[:q])
+    @wines = @search.result 
 
     @title = "Your wines"
 
